@@ -46,16 +46,18 @@
         <input type="text" name="lname" id="lname" required placeholder="Last Name"><br>
         <input type="email" name="email" id="email" required placeholder="Email">
         <input type="tel" name="number" id="number" required placeholder="Number"><br>
-        <input type="password" name="password" id="password" required placeholder="Password">
+        <input type="text" name="username" id="username" required placeholder="username">
+        <input type="password" name="password" id="password" required placeholder="Password"><br>
         <input type="password" name="confirm" id="confirm" required placeholder="Confirm Password"><br>
         <button type="submit">Signup</button>
     </form>
-
-    {% if name %}
-        <p style="color: red;">{{name}}</p>
-    {% else %}
-        <p style="color: green;">{{success}}</p>
-    {% endif %} 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
 
 {% endblock %}
 
