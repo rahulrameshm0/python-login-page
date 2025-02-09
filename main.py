@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, flash, redirect, url_for, get_flashed_messages
+from flask import Flask, request, render_template, flash, redirect, url_for
 datas = {}
 
 app = Flask(__name__)
